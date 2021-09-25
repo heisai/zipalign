@@ -103,7 +103,7 @@ __这里需要注意的是64 位的格式:__
    
 
 |序号|Value| Size|Description
-|--|--|--|--
+|--|--|--|--|
 1|(ZIP64) 0x0001|        2 bytes        |     Tag for this "extra" block type(zip 64 默认)
 2|Size              |    2 bytes    |         Size of this "extra" block  Original (扩展区的大小,是以上三项数据的大下)
 3|Size     |             8 bytes        |     Original uncompressed file size   Compressed (文件压缩前的大小)     
@@ -116,7 +116,7 @@ __这里需要注意的是64 位的格式:__
 
 ### Zip64 end of central directory record 结构
 
-序号|Description|size
+|序号|Description|size
 |--|--|--|
 1|zip64 end of central dir  signature            |           4 bytes  (0x06064b50)
 2|size of zip64 end of central directory record     |           8 bytes
@@ -133,7 +133,7 @@ __这里需要注意的是64 位的格式:__
 当文件数目 大于65535 的时候.  end of central directory record 中心目录结束记录 是存放不下的. 所以这个数, 以及中心目录区的偏移量 都存储在这里. 
 ### Zip64 end of central directory locator 结构
 |Description|size
-|--|--|--|--|
+|--|--|
 zip64 end of central dir locator  signature |4 bytes  (0x07064b50)
 number of the disk with the start of the zip64 end of central directory | 4 bytes
 relative offset of the zip64 end of central directory record| 8 bytes
@@ -147,7 +147,7 @@ total number of disks| 4 bytes
 
 ### end of central directory record 中心目录结束记录
 |Offset|Bytes|Description|描述
-|--|--|--|--
+|--|--|--|--|
 |0	|4	|end of central dir signature	|中心目录结束标识 (固定值0x06054b50)
 |4	|2	|number of this disk	|当前磁盘编号
 |6	|2	|number of the disk with the start of the central directory	|中心目录开始位置的磁盘编号
